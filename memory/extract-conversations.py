@@ -21,9 +21,10 @@ from typing import Optional, List, Dict
 import re
 
 def parse_timestamp(ts_str: str) -> datetime:
-    """Parse ISO format timestamp"""
-    # Remove trailing Z and parse
-    return datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
+    """Parse ISO format timestamp to naive UTC"""
+    # Remove trailing Z and parse as UTC, then make naive for comparison
+    ts = datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
+    return ts.replace(tzinfo=None)
 
 def get_conversations_since(index_file: Path, hours: int = 1, 
                            session_id: Optional[str] = None) -> Dict:
@@ -44,7 +45,7 @@ def get_conversations_since(index_file: Path, hours: int = 1,
         print(f"Error: Index file not found at {index_file}", file=sys.stderr)
         return {'count': 0, 'questions': [], 'answers': [], 'summary': 'No index found'}
     
-    cutoff_time = datetime.utcnow() - timedelta(hours=hours)
+    cutoff_time = datetime.utcnow().replace(tzinfo=None) - timedelta(hours=hours)
     questions = []
     answers = []
     
