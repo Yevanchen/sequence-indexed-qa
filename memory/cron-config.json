@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "name": "memory-extraction-summarizer",
+  "description": "Extract and summarize conversations hourly",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 * * * *",
+    "tz": "UTC"
+  },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "TRIGGER_MEMORY_EXTRACTION: Extract conversations from past hour and spawn summarizer sub-agent"
+  },
+  "config": {
+    "index_file": "/home/node/clawd/memory/qa-index.json",
+    "extraction_script": "/home/node/clawd/memory/extract-conversations.py",
+    "summarizer_script": "/home/node/clawd/memory/subagent-summarize.py",
+    "output_dir": "/home/node/clawd/memory/extractions",
+    "hours": 1,
+    "session_id": "discord-常規-20260130"
+  },
+  "enabled": true,
+  "created": "2026-01-31T09:02:47.203384Z"
+}
