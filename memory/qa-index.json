@@ -7,7 +7,7 @@
       "channel_name": "常规",
       "channel_id": "1466083818061566090",
       "created": "2026-01-30T18:16:00Z",
-      "last_updated": "2026-02-01T19:50:29.061759Z",
+      "last_updated": "2026-02-01T20:27:19.652873Z",
       "qa_sequence": [
         {
           "seq": 1,
@@ -514,6 +514,44 @@
             "output_injection,",
             "fundamental_issue"
           ]
+        },
+        {
+          "seq": 24,
+          "timestamp": "2026-02-01T19:55:15.257107Z",
+          "user": "Evanchen",
+          "q": "eco303 似乎被错误覆盖了",
+          "q_tokens": [
+            "eco303",
+            "似乎被错误覆盖了"
+          ],
+          "q_hash": "167ec74f056c4aafcfbf6ceffc3a0c08",
+          "a": "Mistake: accidentally overwrote ECO-303 (Test run artifacts issue) with FPRD-74 content (Problem Classifier issue) when updating FPRD-74. Restored ECO-303 to correct original content. Issue: multiple issue updates without careful isolation of IDs.",
+          "a_significance": 0.7,
+          "a_tokens": 32,
+          "topic_tags": [
+            "issue_tracking,",
+            "mistake,",
+            "linear_management"
+          ]
+        },
+        {
+          "seq": 25,
+          "timestamp": "2026-02-01T20:27:19.652873Z",
+          "user": "Evanchen",
+          "q": "将 fprd 标记为重复",
+          "q_tokens": [
+            "fprd",
+            "标记为重复"
+          ],
+          "q_hash": "175dcbb4ecf6b5f5e03593529def182a",
+          "a": "Marked FPRD-75 as Duplicate (state: canceled). PNG issue is already tracked in ECO-305 (Ecosystem team). Both ECO-305 and FPRD-75 address the same problem: PNG binary data treated as text during transmission, causing file corruption.",
+          "a_significance": 0.75,
+          "a_tokens": 34,
+          "topic_tags": [
+            "issue_management,",
+            "duplicate_tracking,",
+            "consolidation"
+          ]
         }
       ]
     }
@@ -780,6 +818,10 @@
         {
           "session": "discord-常规-20260130",
           "seq": 16
+        },
+        {
+          "session": "discord-常规-20260130",
+          "seq": 24
         }
       ],
       "artifacts,": [
@@ -969,9 +1011,49 @@
           "session": "discord-常规-20260130",
           "seq": 23
         }
+      ],
+      "mistake,": [
+        {
+          "session": "discord-常规-20260130",
+          "seq": 24
+        }
+      ],
+      "linear_management": [
+        {
+          "session": "discord-常规-20260130",
+          "seq": 24
+        }
+      ],
+      "issue_management,": [
+        {
+          "session": "discord-常规-20260130",
+          "seq": 25
+        }
+      ],
+      "duplicate_tracking,": [
+        {
+          "session": "discord-常规-20260130",
+          "seq": 25
+        }
+      ],
+      "consolidation": [
+        {
+          "session": "discord-常规-20260130",
+          "seq": 25
+        }
       ]
     },
     "by_recency": [
+      {
+        "session": "discord-常规-20260130",
+        "seq": 25,
+        "timestamp": "2026-02-01T20:27:19.652873Z"
+      },
+      {
+        "session": "discord-常规-20260130",
+        "seq": 24,
+        "timestamp": "2026-02-01T19:55:15.257107Z"
+      },
       {
         "session": "discord-常规-20260130",
         "seq": 23,
@@ -1180,17 +1262,25 @@
       "14f8e1eefb7966459b645b5dcde86c97": {
         "session": "discord-常规-20260130",
         "seq": 23
+      },
+      "167ec74f056c4aafcfbf6ceffc3a0c08": {
+        "session": "discord-常规-20260130",
+        "seq": 24
+      },
+      "175dcbb4ecf6b5f5e03593529def182a": {
+        "session": "discord-常规-20260130",
+        "seq": 25
       }
     }
   },
   "metadata": {
-    "total_qa_pairs": 23,
-    "stored_answers": 22,
+    "total_qa_pairs": 25,
+    "stored_answers": 24,
     "stored_answers_count": 9,
     "empty_answers_count": 1,
     "average_significance": 0.748,
     "compression_ratio": 0.833,
-    "last_updated": "2026-02-01T19:50:29.061759Z",
+    "last_updated": "2026-02-01T20:27:19.652873Z",
     "notes": "First session initialized with conversation history from 2026-01-30 18:16-18:26 UTC"
   }
 }
